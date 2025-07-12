@@ -1,0 +1,254 @@
+/* Reset */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #020221e3;
+  overflow-x: hidden;
+}
+
+/* Top navigation */
+.top-one {
+  background-color: #02182b48;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-one p {
+  margin: 0;
+  color: #333;
+}
+
+/* Page container */
+.login-outer {
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease;
+  padding: 1rem;
+}
+
+/* Animating side switch */
+.slide-left {
+  transform: translateX(0%);
+}
+
+.slide-right {
+  transform: translateX(3%);
+}
+
+/* Login box */
+.login-inner {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  min-height: 500px;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  position: relative;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Headings */
+.login-inner h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Inputs */
+.login-inner input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.4rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.login-inner input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102, 126, 234, 0.4);
+}
+
+/* Buttons */
+.login-inner button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-inner button:hover {
+  background-color: #5a67d8;
+}
+
+/* Toggle between login/signup */
+.login-inner .re {
+  text-align: center;
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.login-inner .re span {
+  color: #667eea;
+  font-weight: bold;
+}
+
+.login-inner .re:hover span {
+  text-decoration: underline;
+  color: #5a67d8;
+}
+
+/* Error popup */
+.error-popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  animation: fadeInDown 0.5s ease;
+}
+
+.error-content {
+  background-color: #ffe6e6;
+  color: #b30000;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.error-symbol {
+  font-size: 1.5rem;
+  animation: shake 0.5s;
+}
+
+/* ✅ SUCCESS popup */
+.success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  transform: translate(-50%, -50%);
+  background-color: #e8fff1;
+  border: 2px solid #38a169;
+  padding: 2rem;
+  border-radius: 20px;
+  z-index: 999;
+  text-align: center;
+  animation: zoomIn 0.4s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.checkmark-container .checkmark {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #38a169;
+  animation: pop 0.3s ease-in-out;
+  margin-bottom: 0.5rem;
+}
+
+.success-popup p {
+  color: #2f855a;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.home-btn {
+  background-color: #38a169;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #2f855a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+.redpppp {
+  color: black;
+}
